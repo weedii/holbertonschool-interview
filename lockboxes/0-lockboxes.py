@@ -3,7 +3,7 @@
 
 
 def canUnlockAll(boxes):
-    new_list = [boxes[0], ]
+    new_list = []
 
     for box in boxes:
 
@@ -18,6 +18,8 @@ def canUnlockAll(boxes):
                 elif key <= len(boxes) and box not in new_list:
                     new_list.append(box)
 
+    print(f"boxes---------{boxes}")
+    print(f"new_list------{new_list}")
     if len(boxes) == len(new_list):
         return True
     return False

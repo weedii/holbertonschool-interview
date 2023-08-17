@@ -3,7 +3,7 @@
 
 
 def canUnlockAll(boxes):
-    new_list = [boxes[0], ]
+    new_list = []
 
     for box in boxes:
 

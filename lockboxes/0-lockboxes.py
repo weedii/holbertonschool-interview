@@ -9,11 +9,13 @@ def canUnlockAll(boxes):
 
         if len(box) == 0:
             boxes.pop(boxes.index(box))
-        if len(box) == 1:
+        if len(box) == 1 and box not in new_list and box[0] <= len(boxes):
             new_list.append(box)
         elif len(box) > 1:
             for key in box:
-                if key <= len(boxes) and box not in new_list:
+                if key > len(boxes):
+                    return False
+                elif key <= len(boxes) and box not in new_list:
                     new_list.append(box)
 
     if len(boxes) == len(new_list):

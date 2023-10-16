@@ -2,7 +2,7 @@
 
 ---
 
-### Task 1:
+### Task 0:
 
 ```
 Write a function that creates a binary tree node:

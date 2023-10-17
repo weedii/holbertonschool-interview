@@ -9,7 +9,7 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *slow, *fast = malloc(sizeof(list));
+	listint_t *slow, *fast;
 
 	slow = list;
 	fast = list;

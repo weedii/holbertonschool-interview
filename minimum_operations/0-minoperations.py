@@ -5,20 +5,22 @@
 def minOperations(n):
     """minOperations function"""
     count = 0
-    string = 'H'
-    while len(string) < n:
-        if n % len(string) == 0:
-            string += string
-            count += 1
+    len_str = 1
+    i = 0
+    while len_str < n:
+        if n % len_str == 0:
+            i = len_str
+            len_str *= 2
+            count += 2
         else:
-            string += string[0]
+            len_str += i
             count += 1
-    if len(string) == n:
-        return count
-    else:
-        return 0
+    return count
 
 
 "H" "HH" "HHH" "HHHHHH" "HHHHHHHHH"
-"H" "HH" ""
+
+" i = 4 len = 12 count = 7 "
+"H" "HH" "HHHH"
+
 "H" "HH" "HHH" "HHHHHH" "HHHHHHHHH" "HHHHHHHHHHHH"

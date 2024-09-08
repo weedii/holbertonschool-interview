@@ -6,7 +6,7 @@ const movieId = process.argv[2];
 
 const movieUrl = `https://swapi-api.hbtn.io/api/films/${movieId}/`;
 
-request(movieUrl, (error, res, body) => {
+request(movieUrl, async (error, res, body) => {
   if (error) {
     console.error(`Error while fetching movie:${movieId}`, error);
     return;

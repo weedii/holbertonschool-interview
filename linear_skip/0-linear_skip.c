@@ -1,5 +1,4 @@
 #include "search.h"
-
 /**
  * linear_skip - Searches for a value in a sorted skip list
  * @list: Pointer to the head of the skip list
@@ -20,7 +19,6 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 				list->express->index, list->express->n);
 		if (list->express->n >= value)
 		{
-			/* Found the block of the value */
 			printf("Value found between indexes [%lu] and [%lu]\n",
 					list->index, list->express->index);
 			break;
@@ -40,7 +38,6 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 				prev->index, list->index);
 	}
 	list = prev;
-	/* Traverse regular list */
 	while (list)
 	{
 		printf("Value checked at index [%lu] = [%d]\n", list->index, list->n);

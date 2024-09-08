@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 import request from "request";
 
 const movieId = process.argv[2];

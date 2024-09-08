@@ -3,9 +3,6 @@
 const request = require("request");
 
 const movieId = process.argv[2];
-console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-console.log(movieId);
-console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 
 const movieUrl = `https://swapi-api.hbtn.io/api/films/${movieId}/`;
 

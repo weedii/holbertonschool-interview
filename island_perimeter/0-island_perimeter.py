@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 """
-Function that returns the perimeter of the island described in grid
+Get the perimeter of the island described in grid
 """
+
 
 def island_perimeter(grid):
     """
@@ -30,5 +31,5 @@ def island_perimeter(grid):
                 # right (j + 1)
                 if grid[i][j + 1] == 0:
                     perimeter += 1
-                    
+
     return perimeter

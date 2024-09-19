@@ -12,19 +12,19 @@ def makeChange(coins, total):
 
     if total <= 0:
         return 0
-    
+
     if len(coins) <= 0:
         return -1
 
     if total in coins:
         return 1
 
-    tmpArr = [0]*(total + 1)
+    tmpArr = [0] * (total + 1)
 
     for i in range(1, total + 1):
         tmpArr[i] = total + 1
 
-    for i in range(1, total+1):
+    for i in range(1, total + 1):
         for coin in coins:
             if i - coin >= 0:
                 tmpArr[i] = min(tmpArr[i], 1 + tmpArr[i - coin])

@@ -5,7 +5,9 @@ Get the perimeter of the island described in grid
 
 
 def island_perimeter(grid):
-    """0-island_perimeter.py"""
+    """
+    blaaa blaaa
+    """
 
     perimeter = 0
     rows = len(grid)

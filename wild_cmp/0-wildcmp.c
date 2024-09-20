@@ -8,28 +8,20 @@
  *
  * Return: 1 if the strings can be considered identical, otherwise return 0.
  */
-int wildcmp(char *s1, char *s2) {
-  char *tmpS2 = NULL;
-  char *match = NULL;
+int wildcmp(char *s1, char *s2)
+{
+	if (*s1 == '\0' && *s2 == '\0')
+		return (1);
 
-  while (*s1 != '\0') {
-    printf("%c\n", *s2);
-    if (*s2 == '*') {
-      tmpS2 = s2++;
-      match = s1;
-    } else if (*s1 == *s2) {
-      s1++;
-      s2++;
-    } else if (tmpS2) {
-      s2 = tmpS2 + 1;
-      s1 = ++match;
-    } else {
-      return 0;
-    }
-  }
+	if (*s2 == '*')
+	{
+		if (*s1 == '\0')
+			return (wildcmp(s1, s2 + 1));
+		return (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2));
+	}
 
-  while (*s2 == '*')
-    s2++;
+	if (*s1 == *s2)
+		return (wildcmp(s1 + 1, s2 + 1));
 
-  return (*s2 == '\0');
+	return (0);
 }

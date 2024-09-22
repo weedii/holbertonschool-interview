@@ -27,6 +27,7 @@ def print_stats():
         if value > 0:
             print("{}: {}".format(key, value))
 
+
 if __name__ == "__main__":
     try:
         for line in sys.stdin:

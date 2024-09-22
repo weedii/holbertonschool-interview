@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 Script that reads stdin line by line and computes metrics
 """
@@ -26,21 +27,21 @@ def print_stats():
         if value > 0:
             print("{}: {}".format(key, value))
 
+if __name__ == "__main__":
+    try:
+        for line in sys.stdin:
+            parts = line.split()
+            if len(parts) >= 2:
+                try:
+                    FileSize += int(parts[-1])
+                except ValueError:
+                    pass
 
-try:
-    for line in sys.stdin:
-        parts = line.split()
-        if len(parts) >= 2:
-            try:
-                FileSize += int(parts[-1])
-            except ValueError:
-                pass
+                if parts[-2] in STATUS:
+                    STATUS[parts[-2]] += 1
 
-            if parts[-2] in STATUS:
-                STATUS[parts[-2]] += 1
-
-        count += 1
-        if count % 10 == 0:
-            print_stats()
-finally:
-    print_stats()
+            count += 1
+            if count % 10 == 0:
+                print_stats()
+    finally:
+        print_stats()

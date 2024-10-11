@@ -29,7 +29,7 @@ def isWinner(x, nums):
     primes = getPrimesArray(max(nums))
 
     for n in nums:
-        prime_count = sum(primes[2 : n + 1])
+        prime_count = sum(primes[2:n + 1])
 
         if prime_count % 2 == 1:
             maria_wins += 1

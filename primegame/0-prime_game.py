@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Prime Game"""
 
+
 def getPrimesArray(max_n):
     """Function to calculate prime numbers up to max_n"""
 
@@ -15,6 +16,7 @@ def getPrimesArray(max_n):
                 primes[multiple] = False
     return primes
 
+
 def isWinner(x, nums):
     """Prime Game determine the winner"""
 
@@ -27,7 +29,7 @@ def isWinner(x, nums):
     primes = getPrimesArray(max(nums))
 
     for n in nums:
-        prime_count = sum(primes[2:n+1])
+        prime_count = sum(primes[2 : n + 1])
 
         if prime_count % 2 == 1:
             maria_wins += 1

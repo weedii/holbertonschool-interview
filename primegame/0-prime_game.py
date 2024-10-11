@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Prime Game"""
 
 def getPrimesArray(max_n):
     """Function to calculate prime numbers up to max_n"""
